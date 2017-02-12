@@ -1,11 +1,13 @@
 #!/usr/bin env python
 # -*- coding: utf-8 -*-
 
+import os
 import json
 from io import StringIO
 
 import pandas as pd
 
+KAFKA_SERVER = os.environ.get("KAFKA_SERVER", "localhost:9092")
 
 def msg_deserializer(msg):
     try:

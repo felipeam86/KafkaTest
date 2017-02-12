@@ -1,15 +1,13 @@
 #!/usr/bin env python
 # -*- coding: utf-8 -*-
 
-import os
 from time import sleep
 
 from sklearn.datasets import make_classification
 from kafka import KafkaProducer
 
-from utils import msg_serializer, data_serializer
+from utils import msg_serializer, data_serializer, KAFKA_SERVER
 
-KAFKA_SERVER = os.environ.get("KAFKA_SERVER", "localhost:9092")
 
 producer = KafkaProducer(bootstrap_servers=KAFKA_SERVER,
                          client_id="Data-set Producer",
